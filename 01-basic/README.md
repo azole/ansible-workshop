@@ -33,3 +33,23 @@ Ansible Lab #01 - Basic
 
 - `ansible-playbook`
 - idempotent
+  - 設定檔可以重複執行，他不會有怪怪的副作用
+
+
+### 練習 by azole
+
+```
+vagrant up --no-provision
+
+ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory setup.yml 
+
+> cat /etc/hosts
+# 會看到多了一個 10.0.0.10  mywordpress
+
+```
+
+或是直接交由 vagrant 執行   
+```
+vagrant up --no-provision
+```
+Vagrantfile 有設定了 config.vm.provision   
